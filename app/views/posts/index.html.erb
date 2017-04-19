@@ -1,0 +1,35 @@
+
+<h3>Home Page</h3>
+
+<div id="posts-index">
+
+    <p>{{message}}</p>
+    <p>{{counter}}</p>
+
+    <button @click="helloWorld">Hello Button</button>
+
+    <button @click="resetCounter">Reset Counter</button>
+
+    <input v-model="color1" value="blue">
+    <input v-model="color2">
+    <input v-model="color3">
+
+    <counter-button v-on:increment="helloWorld" v-bind:color="color1"></counter-button>
+    <counter-button v-on:increment="helloWorld" v-bind:color="color2"></counter-button>
+    <counter-button v-on:increment="helloWorld" v-bind:color="color3"></counter-button>
+
+</div>
+
+<a href="/posts/show">Another page!</a>
+
+<script type="text/x-template" id="counter-button">
+
+    <div style="border: 1px solid black; padding: 5px;">
+        <button v-on:click="incrementCounter" v-bind:style="colorStyle">{{counter}}</button>
+    </div>
+
+</script>
+
+<%= javascript_include_tag 'posts/counter-button.js' %>
+
+<%= javascript_include_tag 'posts/posts.js' %>
