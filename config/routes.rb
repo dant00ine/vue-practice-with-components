@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+    post '/user_token' => 'user_token#create'
+
     root 'posts#index'
     post '/posts/count', to: 'posts#count'
     get '/posts/get-count', to: 'posts#getCount'
